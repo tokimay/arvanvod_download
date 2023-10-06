@@ -1,6 +1,6 @@
 
 Requeriment (linux base)  <br />
-$ sudo apt install ffmpeg  <br />
+$ sudo apt-get install ffmpeg  <br />
 $ sudo apt-get install chromium-chromedriver  <br />
  <br />
 How to use (linux base)  <br />

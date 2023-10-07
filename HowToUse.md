@@ -4,7 +4,7 @@ $ sudo apt-get install ffmpeg  <br />
 $ sudo apt-get install chromium-chromedriver  <br />
  <br />
 How to use (linux base)  <br />
-$ git clone https://github.com/tokimay/Arvanvod_Download  <br />
+$ git clone --depth=1 https://github.com/tokimay/Arvanvod_Download  <br />
 $ cd Arvanvod_Download  <br />
 $ source Arvan_ENV/bin/activate  <br />
 $ python3 getVideo.py URL/TO/SITE/CONTAIN/ArvanvodCLOUD/VIDEO  <br />

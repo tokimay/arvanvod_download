@@ -20,8 +20,10 @@ for j in jsonLink:
         output = data['title']
     if not m3u8_address:
         continue
+    output = output.replace(" ", "_")
 
 try:
+    # print('get video from {}'.format(m3u8_address))
     os.system('ffmpeg -i {} -c copy -bsf:a aac_adtstoasc {}.mp4'.format(m3u8_address, output))
     print(f'file {os.path.dirname(os.path.realpath(__file__))}/{output}.mp4 saved')
 except:

@@ -56,18 +56,19 @@ def get(url):
 
     # Iterate through the headers sequentially
     for request_headers, response_headers in zip(request_headers_data, response_headers_data):
-        #print("Request URL:", request_headers["url"])
-        #print("Request Headers:", request_headers["headers"])
-        #print("Response URL:", response_headers["url"])
-        #print("Response Headers:", response_headers["headers"])
-        #print('--------------------------------------')
-        if str(request_headers["url"]).find("arvanvod.ir") == -1:
+        # print("Request URL:", request_headers["url"])
+        # print("Request Headers:", request_headers["headers"])
+        # print("Response URL:", response_headers["url"])
+        # print("Response Headers:", response_headers["headers"])
+        # print('--------------------------------------')
+        if str(request_headers["url"]).find("player.arvancloud.ir") == -1:
             pass
         else:
             jsonLink.append(request_headers["url"])
 
     # Close the WebDriver
     driver.quit()
+    # print(jsonLink)
     return jsonLink
 
 

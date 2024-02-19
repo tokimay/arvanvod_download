@@ -28,5 +28,3 @@ try:
     print(f'file {os.path.dirname(os.path.realpath(__file__))}/{output}.mp4 saved')
 except:
     print('Error')
-
-

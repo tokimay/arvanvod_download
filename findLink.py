@@ -70,6 +70,3 @@ def get(url):
     driver.quit()
     # print(jsonLink)
     return jsonLink
-
-
-

@@ -1,14 +1,12 @@
 
-Requeriment (linux base)  <br />
+Install requirement (linux base) :  <br />
 ````shell
 $ sudo apt-get install ffmpeg
 $ sudo apt-get install chromium-chromedriver
+$ pip install selenium
 ````
-How to use (linux base)  <br />
+How to use:  <br />
 ````shell
-$ git clone --depth=1 https://github.com/tokimay/Arvanvod_Download
-$ cd Arvanvod_Download
-$ source Arvan_ENV/bin/activate
 $ python3 getVideo.py URL/TO/SITE/CONTAIN/ArvanvodCLOUD/VIDEO
 ````
 example:  <br />

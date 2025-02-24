@@ -1,9 +1,8 @@
 import json
 from selenium import webdriver
 
-
-def get(url):
-    jsonLink = []
+def get(_url):
+    __jsonLink = []
 
     # Initialize Chrome WebDriver with performance logging enabled
     chrome_options = webdriver.ChromeOptions()
@@ -13,7 +12,7 @@ def get(url):
     driver = webdriver.Chrome(options=chrome_options)
 
     # Navigate to the target website
-    driver.get(url)
+    driver.get(_url)
 
     # Capture network log entries
     log_entries = driver.get_log("performance")
@@ -29,15 +28,15 @@ def get(url):
             obj = json.loads(obj_serialized)
             message = obj.get("message")
             method = message.get("method")
-            url = message.get("params", {}).get("documentURL")
+            _url = message.get("params", {}).get("documentURL")
 
             if method == 'Network.requestWillBeSentExtraInfo' or method == 'Network.requestWillBeSent':
                 try:
                     request_payload = message['params'].get('request', {})
                     request_headers = request_payload.get('headers', {})
                     # Store request headers and last known URL in request_headers_data
-                    request_headers_data.append({"url": url, "headers": request_headers})
-                    last_known_url = url
+                    request_headers_data.append({"url": _url, "headers": request_headers})
+                    last_known_url = _url
                 except KeyError:
                     pass
 
@@ -46,8 +45,8 @@ def get(url):
                     response_payload = message['params'].get('response', {})
                     response_headers = response_payload.get('headers', {})
                     # Store response headers and last known URL in response_headers_data
-                    response_headers_data.append({"url": url, "headers": response_headers})
-                    last_known_url = url
+                    response_headers_data.append({"url": _url, "headers": response_headers})
+                    last_known_url = _url
                 except KeyError:
                     pass
 
@@ -64,9 +63,9 @@ def get(url):
         if str(request_headers["url"]).find("player.arvancloud.ir") == -1:
             pass
         else:
-            jsonLink.append(request_headers["url"])
+            __jsonLink.append(request_headers["url"])
 
     # Close the WebDriver
     driver.quit()
     # print(jsonLink)
-    return jsonLink
+    return __jsonLink

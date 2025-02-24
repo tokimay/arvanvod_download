@@ -23,7 +23,7 @@ for j in __jsonLink:
 
 try:
     # print('get video from {}'.format(m3u8_address))
-    os.system('ffmpeg -i {} -c copy -bsf:a aac_adtstoasc {}.mp4'.format(__m3u8_address, __output))
+    os.system('ffmpeg -i {} -c copy -bsf:a aac_adtstoasc {}'.format(__m3u8_address, __output))
     print(f'file {os.path.dirname(os.path.realpath(__file__))}/{__output}.mp4 saved')
 except Exception as er:
     print(f"{er}")
